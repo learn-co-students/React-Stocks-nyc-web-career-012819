@@ -1,32 +1,46 @@
 import React from 'react';
 
-const SearchBar = () => {
-  return (
-    <div>
-
-      <strong>Sort by:</strong>
-      <label>
-        <input type="radio" value="Alphabetically" checked={null} onChange={null}/>
-        Alphabetically
-      </label>
-      <label>
-        <input type="radio" value="Price" checked={null} onChange={null}/>
-        Price
-      </label>
-      <br/>
-
-      <label>
-        <strong>Filter:</strong>
-        <select onChange={null}>
-          <option value="Tech">Tech</option>
-          <option value="Sportswear">Sportswear</option>
-          <option value="Finance">Finance</option>
-        </select>
-      </label>
+class SearchBar extends React.Component {
 
 
-    </div>
-  );
+  handleChange = (e) => {
+    console.log(e.target.value);
+    this.props.handleChange(e.target.value)
+  }
+
+  handleFilter = (e) => {
+    console.log(e.target.value);
+    this.props.handleFilter(e.target.value)
+  }
+
+  render() {
+    return (
+      <div>
+
+        <strong>Sort by:</strong>
+        <label>
+          <input type="radio" value="Alphabetically" checked={null} onChange={this.handleChange}/>
+          Alphabetically
+        </label>
+        <label>
+          <input type="radio" value="Price" checked={null} onChange={this.handleChange}/>
+          Price
+        </label>
+        <br/>
+
+        <label>
+          <strong>Filter:</strong>
+          <select onChange={this.handleFilter}>
+            <option value="Tech">Tech</option>
+            <option value="Sportswear">Sportswear</option>
+            <option value="Finance">Finance</option>
+          </select>
+        </label>
+
+
+      </div>
+    );
+  }
 }
 
 
