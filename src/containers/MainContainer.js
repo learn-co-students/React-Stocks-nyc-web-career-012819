@@ -70,18 +70,18 @@ class MainContainer extends Component {
       this.setState({ stocks: [...sortedList] });
     }
   };
-
+  // for the filter feature
   changeListener = selectedType => {
     // coming from search bar
     this.setState({ filterTerm: selectedType });
   };
-
+  // pass this function down to stock list.
   updateStateStocks = () => {
     return this.state.stocks.filter(stock =>
       stock.type.includes(this.state.filterTerm)
     );
   };
-  // my Portfolio sell and buy isn't working properly, can't figure out.
+
   render() {
     // console.log(this.state.alphabetSort, this.state.priceSort);
     return (
