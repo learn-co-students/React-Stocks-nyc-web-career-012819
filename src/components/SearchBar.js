@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   return (
     <div>
 
@@ -17,10 +17,11 @@ const SearchBar = () => {
 
       <label>
         <strong>Filter:</strong>
-        <select onChange={null}>
+        <select onChange={props.filter}>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>
+          <option value="All">All</option>
         </select>
       </label>
 
