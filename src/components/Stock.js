@@ -1,21 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react';
 
-const Stock = () => (
-  <div>
-
-    <div className="card">
+const Stock = (props) => (
+  <Fragment>
+    <div className="card" onClick={() => props.clickHandler(props.id, props.source)}>
       <div className="card-body">
-        <h5 className="card-title">{
-            //Company Name
-          }</h5>
-        <p className="card-text">{
-            //ticker: stock price
-          }</p>
+        <h5 className="card-title">{props.name}</h5>
+        <p className="card-text">{props.price}</p>
       </div>
     </div>
-
-
-  </div>
+  </Fragment>
 );
 
-export default Stock
+export default Stock;
